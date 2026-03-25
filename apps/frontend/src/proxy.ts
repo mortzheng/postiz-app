@@ -2,6 +2,13 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { getCookieUrlFromDomain } from '@gitroom/helpers/subdomain/subdomain.management';
 import { internalFetch } from '@gitroom/helpers/utils/internal.fetch';
+import acceptLanguage from 'accept-language';
+import {
+  cookieName,
+  headerName,
+  languages,
+} from '@gitroom/react/translation/i18n.config';
+acceptLanguage.languages(languages);
 
 // This function can be marked `async` if using `await` inside
 export async function proxy(request: NextRequest) {
@@ -10,8 +17,27 @@ export async function proxy(request: NextRequest) {
     request.cookies.get('auth') ||
     request.headers.get('auth') ||
     nextUrl.searchParams.get('loggedAuth');
+  const lng = request.cookies.has(cookieName)
+    ? acceptLanguage.get(request.cookies.get(cookieName).value)
+    : acceptLanguage.get(
+        request.headers.get('Accept-Language') ||
+          request.headers.get('accept-language')
+      );
 
-  const topResponse = NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+  if (lng) {
+    requestHeaders.set(headerName, lng);
+  }
+
+  const topResponse = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+
+  if (lng) {
+    topResponse.headers.set(cookieName, lng);
+  }
 
   if (nextUrl.pathname.startsWith('/modal/') && !authCookie) {
     return NextResponse.redirect(new URL(`/auth/login-required`, nextUrl.href));

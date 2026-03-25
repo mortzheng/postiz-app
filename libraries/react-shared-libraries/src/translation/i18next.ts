@@ -7,6 +7,7 @@ const runsOnServerSide = typeof window === 'undefined';
 
 i18next
   .use(initReactI18next)
+  .use(LanguageDetector)
   .use(
     resourcesToBackend((language: any, namespace: any) => {
       return import(`./locales/${language}/${namespace}.json`);
@@ -19,7 +20,7 @@ i18next
     fallbackNS: defaultNS,
     defaultNS,
     detection: {
-      order: ['cookie'],
+      order: ['cookie', 'header'],
     },
     preload: runsOnServerSide ? languages : [],
   });
