@@ -1,3 +1,5 @@
+<!-- Remember to first apply at [the contribution form](https://contribute.egelhaus.de/p/postiz) before submitting a PR. -->
+
 # What kind of change does this PR introduce?
 
 eg: Bug fix, feature, docs update, ...
