@@ -1,7 +1,7 @@
 ---
 id: 5
 title: "Dedupe CLAUDE.md and bring AGENTS.md to parity"
-status: in-progress
+status: done
 created: 2026-05-08
 updated: 2026-05-08
 ---

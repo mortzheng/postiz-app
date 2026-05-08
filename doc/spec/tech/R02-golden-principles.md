@@ -1,8 +1,8 @@
 ---
 title: Golden Principles & Agent Rules
 status: active
-created: <YYYY-MM-DD>
-updated: <YYYY-MM-DD>
+created: 2026-05-08
+updated: 2026-05-08
 ---
 
 # Golden Principles & Agent Rules
@@ -130,6 +130,19 @@ except Exception as e:
     logger.exception("do_thing failed")
     return {"status": "error", "message": str(e)}
 ```
+
+#### Rule 4 — Fill Harness-Scaffold Stubs at Adoption; Keep Cross-Tool Agent Docs in Sync
+
+**Root cause category**: Omission / duplication drift
+
+The harness-scaffold places stub files (`CLAUDE.md`, `AGENTS.md`, `R02-golden-principles.md`, etc.) with TODO and `<YYYY-MM-DD>` placeholders. If they ship unfilled, non-Claude agents (Codex, Cursor, Factory) that read `AGENTS.md` get useless guidance, and metadata in spec files stays meaningless. Project-wide guidance written into one of CLAUDE.md / AGENTS.md but not the other causes the two to drift over multiple changes.
+
+Observed in change 005-dedupe-claude-and-agents-md: AGENTS.md sat stub-state through commits 41cf2556 → c83c2202 → a460a402 → fe05ec01 before being caught.
+
+**Rules:**
+- When adopting harness-scaffold or updating its templates, grep newly placed files for `TODO:` or `<YYYY-MM-DD>` placeholders and fill them before committing.
+- When updating project-wide guidance in `CLAUDE.md`, mirror the change into `AGENTS.md` (and any other peer agent-instruction files the project ships) in the same change. They target different agents but describe the same project.
+- Treat `AGENTS.md` as a first-class artifact, not a scaffold afterthought.
 
 <!-- Add project-specific rules below as your retrospectives produce them. -->
 <!-- Format: #### Rule N — Short Title                                     -->
