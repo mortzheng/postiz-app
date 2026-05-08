@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository. The canonical project description, build/test recipe, and directory map live in the harness-scaffold-managed `## Postiz` / `## Build & Test` / `## Directory Map` sections further down — read those first if you need orientation. The sections below cover the rules and conventions that the scaffold doesn't.
+This file provides guidance to AI coding agents (Codex, Jules, Cursor, Factory, and others) when working in this repository. The canonical project description, build/test recipe, and directory map live in the harness-scaffold-managed `## Postiz` / `## Build & Test` / `## Directory Map` sections further down — read those first if you need orientation. The sections below cover the rules and conventions that the scaffold doesn't.
 
 ## Tooling & Package Management
 
