@@ -1,0 +1,20 @@
+{
+  "version": "1",
+  "imports": [
+    {
+      "source_type": "url",
+      "source_ref": "https://docs.postiz.com/introduction | https://docs.postiz.com/howitworks | https://docs.postiz.com/developer-guide | https://docs.postiz.com/quickstart | https://docs.postiz.com/providers/overview | https://docs.postiz.com/public-api/introduction | https://docs.postiz.com/public-api/posts/create | https://docs.postiz.com/public-api/analytics/platform | https://docs.postiz.com/public-api/analytics/post | https://docs.postiz.com/configuration/reference | https://docs.postiz.com/configuration/create-provider | https://docs.postiz.com/installation/docker-compose | https://docs.postiz.com/mcp/introduction | https://docs.postiz.com/mcp/tools | https://docs.postiz.com/cli/introduction",
+      "target_specs": [
+        "doc/spec/product/00-overview.md",
+        "doc/spec/product/01-publishing-and-scheduling.md",
+        "doc/spec/product/02-channels-and-providers.md",
+        "doc/spec/product/03-analytics.md",
+        "doc/spec/product/04-marketplace-and-collaboration.md",
+        "doc/spec/product/05-programmatic-access.md",
+        "doc/spec/tech/R00-system-architecture.md"
+      ],
+      "last_synced": "2026-05-07T00:00:00Z",
+      "source_hash": "n/a-multi-source"
+    }
+  ]
+}
