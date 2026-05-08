@@ -54,6 +54,10 @@ Thumbs.db
 *.~*~
 *.tsbuildinfo
 
+# Playwright artifacts
+/playwright-report
+/test-results
+
 # ignore Secrets folder
 .secrets/
 libraries/plugins/src/plugins.ts
