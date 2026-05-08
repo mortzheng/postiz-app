@@ -1,0 +1,18 @@
+[harness]
+platform = "web"
+agent = "claude"
+langs = ["typescript"]
+e2e = "true"
+agents_md = "true"
+
+[sandbox]
+enabled = "true"
+tier = "full"
+harness_version = "0.14.0"
+
+[section_hashes]
+agents-project-context = "d29e72af5f18f604"
+agents-reference-index = "2986f1fde11589d7"
+doc-engineering-rules-typescript.md = "04c656077511b27f"
+project-context = "d29e72af5f18f604"
+reference-index = "2986f1fde11589d7"
