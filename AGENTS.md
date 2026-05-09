@@ -202,4 +202,5 @@ pnpm test
 - [R00-system-architecture.md](doc/spec/tech/R00-system-architecture.md) — Postiz System Architecture
 - [R01-code-conventions.md](doc/spec/tech/R01-code-conventions.md) — Code Conventions
 - [R02-golden-principles.md](doc/spec/tech/R02-golden-principles.md) — Golden Principles & Agent Rules
+- [R03-source-code-walkthrough.md](doc/spec/tech/R03-source-code-walkthrough.md) — Source Code Walkthrough
 <!-- harness-scaffold: end spec-index -->
